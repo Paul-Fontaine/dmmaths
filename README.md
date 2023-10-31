@@ -10,6 +10,7 @@
 
 ## regroupement en classe
 *question 4*
+- [ ] coder une fonction pour trouver le centre de gravité : la coordonnée moyenne sur chaque axe
 - [ ] regrouper les deux points les plus proches en une classe Γ<sub>1</sub> en utilisant la fonction distance minimale
 - [ ] trouver le point le plus proche de la classe Γ<sub>1</sub> en utilisant la fonction distance minimale avec g<sub>1</sub> le centre de gravité de la classe Γ<sub>1</sub>
 - [ ] ajouter le point trouvé à la classe Γ<sub>1</sub> pour créer la classe Γ<sub>2</sub>
