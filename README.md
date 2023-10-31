@@ -1,4 +1,4 @@
-# dmmaths
+# DM maths
 
 ## fonctions distance
 - [ ] distance euclidienne : sqrt(x² + y²)
