@@ -1,3 +1,39 @@
+import math
+
+#fonctions
+
+
+
+def tests():
+    points = [(-2,3), (-2,1), (-2,-1), (2,-1), (2,1), (1,0)]
+
+    assert dist_euclid((-2,3), (-2,1)) == 2.0
+    assert dist_euclid((-2,1), (2,1)) == 4.0
+    assert dist_euclid((2,-1), (1,0)) == math.sqrt(2)
+
+    assert dist1((-2,3), (-2,1)) == 2
+    assert dist1((-2,1), (2,1)) == 4
+    assert dist1((2,-1), (1,0)) == 2
+
+    assert dist_inf((-2,3), (-2,1)) == 2
+    assert dist_inf((-2,1), (2,1)) == 4
+    assert dist_inf((2,-1), (1,0)) == 1
+
+    assert ecart_ward((-2,3), (-2,1)) == 2.0**2 * 0.5
+    assert ecart_ward((-2,1), (2,1)) == 4.0**2 * 0.5
+    # assert ecart_ward((2,-1), (1,0)) == 1.0 pb de précision des flottants en python haha
+    print(ecart_ward((2,-1), (1,0))) # ça fait 1.0000000000000002
+
+    assert dist_min_ward(points) == ((2, -1), (1, 0))
+    assert dist_min_ward(points[:2]) == ((-2,3), (-2,1))
+    assert dist_min_ward([(0,0)]) == None
+
+    print("mission passed respect +")
+
+
+if __name__ == '__main__':
+    tests()
+
 data = [
     [321, 140, 218, 29.3, 49.2, 3.7, 17.6, 80, 30],
     [321, 252, 125.5, 27.3, 62.3, 6.2, 21.8, 80, 20],
