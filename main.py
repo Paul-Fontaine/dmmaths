@@ -2,8 +2,22 @@ import math
 
 #fonctions
 
+def dist_euclid(M1,M2):
+    pass
 
+def dist1(Mi,Mj):
+    pass
 
+def dist_inf(Mi,Mj):
+    pass
+
+def ecart_ward(M1,M2):
+    pass
+
+def dist_min_ward(t):
+    pass
+
+#tests
 def tests():
     points = [(-2,3), (-2,1), (-2,-1), (2,-1), (2,1), (1,0)]
 
