@@ -43,6 +43,35 @@ six_points = [
 ]
 
 
+def centre_de_grav(classe):
+    x_coords = [point[0] for point in classe]
+    y_coords = [point[1] for point in classe]
+
+    x_barre = sum(x_coords) / len(classe)
+    y_barre = sum(y_coords) / len(classe)
+
+    return (x_barre, y_barre)
+
+def ecart_ward(classe1, classe2):
+    centre1 = centre_de_grav(classe1)
+    centre2 = centre_de_grav(classe2)
+    taille1 = len(classe1)
+    taille2 = len(classe2)
+    distance = dist_euclid(centre1, centre2)
+    return (taille1 * taille2 / (taille1 + taille2)) * distance**2
+
+def make_matrix(classes):
+    taille = len(classes)
+    matrice = [[0 for _ in range(taille)] for _ in range(taille)]
+    
+    for i in range(taille):
+        for j in range(i+1, taille):
+            distance = ecart_ward(classes[i], classes[j])
+            matrice[i][j] = matrice[j][i] = distance
+    
+    return matrice
+
+
 def init(data):
     # transform the data (a simple 2D array) in an array of points
     points = [Point(str(i), 1 / len(data), coord) for i, coord in enumerate(data)]
